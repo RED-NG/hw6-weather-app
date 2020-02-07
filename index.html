@@ -1,55 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <title>Weather App</title>
   </head>
-
   <body>
     <textarea
       name="location"
       id="locationInput"
       placeholder="Enter location here..."
     ></textarea>
-    <button id="cat-button">magical cat button</button>
-    <div id="images"></div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- <script src="moment.js"></script> -->
-
-    <script type="text/javascript">
-      // moment().format("MMMM Do YYYY, h:mm:ss a");
-
-      $("#cat-button").on("click", function() {
-        var apiKey = "9eca7d882f669d4cc021928d6defcd52";
-        var locationQuery = $("#locationInput").textContent;
-        var queryURL =
-          "https://api.openweathermap.org/data/2.5/weather?q=London,uk&units=metric&appid=" +
-          apiKey;
-
-        // city y
-        // date n
-        // icon Image n
-        // temperature y
-        // humidity y
-        // wind speed y
-        // uv index
-
-        $.ajax({
-          url: queryURL,
-          method: "GET"
-        }).then(function(response) {
-          console.log(response.name);
-          console.log(response.weather[0].main);
-          console.log(response.weather[0].description);
-          console.log("Wind speed: " + response.wind.speed + " km/hr");
-          console.log("Temperature: " + response.main.temp);
-          console.log("Feels like: " + response.main.feels_like);
-          console.log("Min. Temp: " + response.main.temp_min);
-          console.log("Min. Temp: " + response.main.temp_max);
-          console.log("Humidity " + response.main.humidity);
-          console.log(response);
-        });
-      });
-    </script>
+    <button id="city-search">Submit</button>
+    <script type="text/javascript" src="index.js"></script>
   </body>
 </html>
