@@ -3,16 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
     <title>Weather App</title>
   </head>
   <body>
-    <textarea
-      name="location"
-      id="locationInput"
-      placeholder="Enter location here..."
-    ></textarea>
-    <button id="city-search">Submit</button>
+    <form class="location-form">
+      <h5>
+        Enter city name: <input type="text" id="locationInput" /><button
+          id="city-search-btn"
+        >
+          Submit
+        </button>
+      </h5>
+    </form>
+
+    <div class="card">
+      <div class="card-body">
+        <h1 class="location-name">location name</h1>
+        <p id="temperature">temp</p>
+        <p id="feels-like">feels like</p>
+        <p id="current-conditions">current condition</p>
+        <p id="wind-speed">wind speed</p>
+        <p id="humidity">humidity</p>
+      </div>
+    </div>
+
     <script type="text/javascript" src="index.js"></script>
   </body>
 </html>
