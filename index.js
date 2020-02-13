@@ -30,6 +30,19 @@ $("#city-search-btn").on("click", function() {
     url: queryURL,
     method: "GET"
   }).then(function(response) {
+    //h1 class location-name
+    //p id temperature
+    //p id feels-like
+    //p id current-condition
+    //p id wind-speed
+    //p id humidity
+
+    $(".location-name").html(response.name);
+    $("#temperature").html("Temperature: " + response.main.temp);
+    $("#feels-like").html("Feels like: " + response.main.feels_like + " °C");
+    $("#wind-speed").html("Wind speed: " + response.wind.speed + " MPH");
+    $("#humidity").html("Humidity " + response.main.humidity + "%");
+
     console.log(response.name);
     console.log(response.weather[0].main);
     console.log(response.weather[0].description);
