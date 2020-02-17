@@ -14,24 +14,62 @@
     <title>Weather App</title>
   </head>
   <body>
-    <form class="location-form">
-      <h5>
-        Enter city name: <input type="text" id="locationInput" /><button
-          id="city-search-btn"
-        >
-          Submit
-        </button>
-      </h5>
-    </form>
+    <div id="location-div">
+      <form class="location-form">
+        <h5>
+          Enter city name: <input type="text" id="locationInput" /><button
+            id="city-search-btn"
+          >
+            Submit
+          </button>
+        </h5>
+      </form>
+      <div id="last-searched"><p id="search-p"></p></div>
+    </div>
 
     <div class="card">
       <div class="card-body">
-        <h1 class="location-name">location name</h1>
+        <div id="icon">
+          <h1 class="location-name">location name</h1>
+          <img id="wicon" src="" alt="Weather icon" />
+        </div>
         <p id="temperature">temp</p>
         <p id="feels-like">feels like</p>
-        <p id="current-conditions">current condition</p>
         <p id="wind-speed">wind speed</p>
         <p id="humidity">humidity</p>
+      </div>
+    </div>
+
+    <div class="five-day-card">
+      <div class="day-one-card">
+        <h1 class="date-one">date day 1</h1>
+        <div id="icon-image"></div>
+        <p id="temperature-one">temp</p>
+        <p id="humidity-one">humidity</p>
+      </div>
+      <div class="day-two-card">
+        <h1 class="date-two">date day 2</h1>
+        <div id="icon-image-two"></div>
+        <p id="temperature-two">temp</p>
+        <p id="humidity-two">humidity</p>
+      </div>
+      <div class="day-three-card">
+        <h1 class="date-three">date day 3</h1>
+        <div id="icon-image-three"></div>
+        <p id="temperature-three">temp</p>
+        <p id="humidity-three">humidity</p>
+      </div>
+      <div class="day-four-card">
+        <h1 class="date-four">date day 4</h1>
+        <div id="icon-image-four"></div>
+        <p id="temperature-four">temp</p>
+        <p id="humidity-four">humidity</p>
+      </div>
+      <div class="day-five-card">
+        <h1 class="date-five">date day 5</h1>
+        <div id="icon-image-five"></div>
+        <p id="temperature-five">temp</p>
+        <p id="humidity-five">humidity</p>
       </div>
     </div>
 
