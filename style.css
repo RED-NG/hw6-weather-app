@@ -6,6 +6,27 @@
   padding-left: 1rem;
 }
 
+#last-searched {
+  padding-left: 1rem;
+}
+
 .location-name {
   display: inline-block;
+}
+
+.day-one-card,
+.day-two-card,
+.day-three-card,
+.day-four-card,
+.day-five-card {
+  display: inline-block;
+  padding: 2rem;
+  margin-left: 1rem;
+  background-color: lightskyblue;
+  color: white;
+}
+
+#forecast-five {
+  padding-left: 1rem;
+  margin-top: 2rem;
 }
