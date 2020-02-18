@@ -6,8 +6,10 @@
   padding-left: 1rem;
 }
 
-#last-searched {
+#last-searched,
+#search-p {
   padding-left: 1rem;
+  display: inline-block;
 }
 
 .location-name {

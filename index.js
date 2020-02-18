@@ -1,11 +1,31 @@
 const apiKey = "9eca7d882f669d4cc021928d6defcd52";
-var citiesArray;
+var citiesArray = ["London", "Paris", "Tokyo", "Toronto"];
 var today = new Date();
 var date =
   today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
 var time =
   today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 var dateTime = date + " " + time;
+
+var citiesDiv = document.querySelector("#search-p");
+// var cityDiv = document.querySelector("#last-searched");
+
+if (localStorage.getItem("city")) {
+  citiesArray = localStorage.getItem("city").split(",");
+  showCities();
+}
+
+console.log(citiesArray);
+function showCities() {
+  citiesDiv.innerHTML = "";
+  citiesArray.forEach(function(e) {
+    // var buttonCity = $("<button>");
+    // buttonCity.addClass("btn btn-dark");
+    // buttonCity.innerHTML = e;
+    // cityDiv.append(buttonCity);
+    citiesDiv.append(e);
+  });
+}
 
 $("#wicon").hide();
 $("#1con").hide();
@@ -18,15 +38,15 @@ $("#city-search-btn").on("click", function() {
   event.preventDefault();
   firstAjaxCall();
   secondAjaxCall();
+  showCities();
+  console.log(citiesArray);
 });
 
 function firstAjaxCall() {
   var locationQuery = $("#locationInput").val();
+  citiesArray.push(locationQuery);
   localStorage.setItem("city", locationQuery);
-
   var locationInput = localStorage.getItem("city");
-
-  console.log(localStorage);
   $("#locationInput").value = locationInput;
 
   const queryURL =
@@ -47,7 +67,7 @@ function firstAjaxCall() {
     $("#feels-like").html("Feels like: " + response.main.feels_like + " °C");
     $("#wind-speed").html("Wind speed: " + response.wind.speed + " MPH");
     $("#humidity").html("Humidity " + response.main.humidity + "%");
-    $("#search-p").html("Last location searched: " + locationInput);
+    // $("#search-p").html("Last location searched: " + locationInput);
   });
 }
 
@@ -67,14 +87,6 @@ function secondAjaxCall() {
     url: fiveDayQueryURL,
     method: "GET"
   }).then(function(response) {
-    console.log(response);
-    console.log(response.list[0].dt_txt);
-    console.log(response.list[8].dt_txt);
-    console.log(response.list[16].dt_txt);
-    console.log(response.list[24].dt_txt);
-    console.log(response.list[32].dt_txt);
-    console.log(response.list[0].weather[0].icon);
-
     $(".date-one").html(response.list[0].dt_txt);
     $("#1con").show();
     var codeIcon = response.list[0].weather[0].icon;
