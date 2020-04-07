@@ -16,14 +16,13 @@ if (localStorage.getItem("city")) {
 }
 
 console.log(citiesArray);
+
 function showCities() {
   citiesDiv.innerHTML = "";
-  citiesArray.forEach(function(e) {
-    // var buttonCity = $("<button>");
-    // buttonCity.addClass("btn btn-dark");
-    // buttonCity.innerHTML = e;
-    // cityDiv.append(buttonCity);
-    citiesDiv.append(e);
+  citiesArray.forEach(function (e) {
+    var createBtn = document.createElement("button");
+    createBtn.innerHTML = e;
+    citiesDiv.append(createBtn);
   });
 }
 
@@ -34,7 +33,7 @@ $("#3con").hide();
 $("#4con").hide();
 $("#5con").hide();
 
-$("#city-search-btn").on("click", function() {
+$("#city-search-btn").on("click", function () {
   event.preventDefault();
   firstAjaxCall();
   secondAjaxCall();
@@ -56,8 +55,8 @@ function firstAjaxCall() {
     apiKey;
   $.ajax({
     url: queryURL,
-    method: "GET"
-  }).then(function(response) {
+    method: "GET",
+  }).then(function (response) {
     $(".location-name").html(response.name + " " + "(" + dateTime + ")");
     $("#wicon").show();
     var iconcode = response.weather[0].icon;
@@ -85,8 +84,8 @@ function secondAjaxCall() {
 
   $.ajax({
     url: fiveDayQueryURL,
-    method: "GET"
-  }).then(function(response) {
+    method: "GET",
+  }).then(function (response) {
     $(".date-one").html(response.list[0].dt_txt);
     $("#1con").show();
     var codeIcon = response.list[0].weather[0].icon;
