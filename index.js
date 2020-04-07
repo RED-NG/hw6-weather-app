@@ -23,6 +23,10 @@ function showCities() {
     var createBtn = document.createElement("button");
     createBtn.innerHTML = e;
     citiesDiv.append(createBtn);
+    createBtn.addEventListener("click", function () {
+      var city = createBtn.innerHTML;
+      console.log(city);
+    });
   });
 }
 
