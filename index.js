@@ -1,5 +1,5 @@
 const apiKey = "9eca7d882f669d4cc021928d6defcd52";
-var citiesArray = ["London", "Paris", "Tokyo", "Toronto"];
+var citiesArray = [];
 var today = new Date();
 var date =
   today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
